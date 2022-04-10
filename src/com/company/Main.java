@@ -9,6 +9,9 @@ public class Main {
 
     private int[] answers = new int[10];
 
+
+
+
     public void mainMenu() {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,65 +19,34 @@ public class Main {
         System.out.println("1 kæreste\n2 kaffemaskine\n3 Netflix\n4 sofa\n5 løbesko\n6 guitar\n7 slik\n8 hund\n9 bog\n10 øl");
         System.out.println("Indtast valg (tal): ");
 
-        String input = scanner.nextLine();
+        int input = scanner.nextInt();
 
-        while (!input.equals("exit")) {
+        // Definere antal gange spørreundersøgelsen skal spørge folk før loopet stopper?
+
+        // Lave en metode som returnerer tallet som er valgt?
+        //
+
+
+
+        int numberOfInterviews = 0;
+
+        while (numberOfInterviews < 20) {
 
             switch (input) {
-                case "1":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[0] += 1;
-                    }
-                    break;
-                case "2":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[1] += 1;
-                    }
-                    break;
-                case "3":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[2] += 1;
-                    }
-                    break;
-                case "4":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[3] += 1;
-                    }
-                    break;
-                case "5":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[4] += 1;
-                    }
-                    break;
-                case "6":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[5] += 1;
-                    }
-                    break;
-                case "7":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[6] += 1;
-                    }
-                    break;
-                case "8":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[7] += 1;
-                    }
-                    break;
-                case "9":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[8] += 1;
-                    }
-                    break;
-                case "10":
-                    for (int i = 0; i < item.length; i++) {
-                        answers[9] += 1;
-                    }
-                    break;
-                default:
-                    System.out.println("Du tastet ikke et tal mellem 1 og 10. Prøv igen");
-                    break;
+                case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -> {
+                    updateList(input);
+                    numberOfInterviews += 1;
+                }
+                default -> System.out.println("Du tastet ikke et tal mellem 1 og 10. Prøv igen");
             }
+
+        }
+    }
+
+
+    public void updateList(int input){
+        for (int i = 0; i < item.length; i++) {
+            answers[input-1] += 1;
         }
     }
 

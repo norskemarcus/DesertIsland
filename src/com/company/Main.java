@@ -25,15 +25,14 @@ public class Main {
             int input = scanner.nextInt();
 
             switch (input) {
-                case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -> {
+                case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ->
                     updateList(input);
-                    numberOfInterviews ++;
-                }
+
                 default -> System.out.println("Du tastet ikke et tal mellem 1 og 10. Prøv igen\n");
             }
+            numberOfInterviews ++;
 
              // If arrays are of equal length:
-
             for (int i = 0; i < item.length; i++) {
             System.out.println(item[i] + '\t' + "("+answers[i]+")");
             }
@@ -42,9 +41,7 @@ public class Main {
 
 
     public void updateList(int input){
-        for (int i = 0; i < item.length; i++) {
-            answers[input-1] ++;
-        }
+        answers[input-1] ++;
     }
 
 
